@@ -239,8 +239,6 @@
 	<script type="text/javascript"
 		src="static/DataTables/js/dataTables.bootstrap.min.js"></script>
 	<script src="static/js/indexjs.js"></script>
-	<script src="static/jsTree/jstree.min.js"></script>
-	<script src="static/js/builtTree.js"></script>
 	<script src="static/js/select2.full.min.js"></script>
 	<script>
 	$('.modal-title').html("Thêm môn học");

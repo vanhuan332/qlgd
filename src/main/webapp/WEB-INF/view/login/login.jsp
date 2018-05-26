@@ -11,15 +11,20 @@
 	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
 	name="viewport">
 <!-- Bootstrap 3.3.7 -->
-<link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" href="static/css/AdminLTE.min.css">
+ <link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css">
+ <link rel="stylesheet" href="static/css/AdminLTE.min.css">
 
 <!-- Google Font -->
 <!-- <link rel="stylesheet" -->
 <!-- 	href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"> -->
+<style>
+body { 
+    background: lightblue url("static/img/credit/anh.png") no-repeat fixed center; 
+}
+</style>
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
-	<div class="container" style="margin-top: 180px;">
+<body">
+	<div class="container" style="margin-top: 280px;">
 		<div class="col-sm-10"></div>
 		<div class="col-md-3"></div>
 		<div class="col-md-6">

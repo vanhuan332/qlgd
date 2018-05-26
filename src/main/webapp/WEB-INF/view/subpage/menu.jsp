@@ -56,12 +56,12 @@
 						<i class="fa fa-angle-left pull-right"></i>
 				</span></a>
 				<ul class="treeview-menu">
-					<li><a href="<%=localUrl%>/congViecChung"> <i
+					<li><a href="#"> <i
 							class="fa fa-calendar-plus-o"></i> Quản lý năm </a></li>
-					<li><a href="<%=localUrl%>/congViecDangXuLy"><i
+					<li><a href="#"><i
 							class="fa fa-calendar-minus-o"></i> Quản lý kì</a></li>
 				</ul></li>
-			<li><a href="<%=localUrl%>/qltracuu"><i class="fa fa-search"></i><span>Quản lý lịch dạy</span></a></li>
+			<li><a href="<%=localUrl%>/qllichday"><i class="fa fa-search"></i><span>Quản lý lịch dạy</span></a></li>
 			<li class="treeview"><a href="#"> <i class="fa fa-hourglass"></i>
 					<span>Thống kê khối lượng</span> <span class="pull-right-container">
 						<i class="fa fa-angle-left pull-right"></i>
@@ -69,8 +69,6 @@
 				<ul class="treeview-menu">
 					<li><a href="<%=localUrl%>/thongkegiogiang"> <i
 							class="fa fa-hourglass-1"></i> Thống kê giờ giảng </a></li>
-					<li><a href="<%=localUrl%>/thongkemiengiam"><i
-							class="fa fa-hourglass-2"></i> Thống kê miễn giảm</a></li>
 				</ul></li>
 		</ul>
 	</section>

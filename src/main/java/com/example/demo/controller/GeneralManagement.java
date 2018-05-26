@@ -31,10 +31,8 @@ public class GeneralManagement {
 		return "Thongke/thongkegiogiang";
 	}
 	
-	@GetMapping("/thongkemiengiam")
-	public String thongkemiengiam() {
-		return "Thongke/thongkemiengiam";
+	@GetMapping("/qllichday")
+	public String qlgioday() {
+		return "Qllichday/qllichday";
 	}
-	
-	
 }

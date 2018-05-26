@@ -71,7 +71,7 @@
 								</div>
 								<div class="col-md-4">
 								<button id="filter" class="btn btn-primary">Tìm Kiếm</button>
-								<button id="reset" class="btn btn-primary">Làm Lại</button>
+								<button id="reset" onclick="resetInput();" class="btn btn-primary">Làm Lại</button>
 							</div>
 								<!-- /.col -->
 
@@ -239,14 +239,11 @@
 	<script type="text/javascript"
 		src="static/DataTables/js/dataTables.bootstrap.min.js"></script>
 	<script src="static/js/indexjs.js"></script>
-	<script src="static/jsTree/jstree.min.js"></script>
-	<script src="static/js/builtTree.js"></script>
 	<script src="static/js/select2.full.min.js"></script>
 	<script>
 	$('.modal-title').html("Thêm môn học");
 	$('.select2').select2();
 	$("#example2").dataTable({"searching":false});
-	
 	$('#okModalXoa').on('click', function() {
 			CommonAjax.post({
 				"orgCode" : deleteOrgCode.trim()

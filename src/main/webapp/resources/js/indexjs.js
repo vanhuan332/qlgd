@@ -26,3 +26,8 @@ function enterForm(inputsWrapperSelector,buttonSelector)
 	});
 	
 }
+
+function resetInput(){
+	$("input, select").val("");
+	$("select").val("").trigger('change');
+}

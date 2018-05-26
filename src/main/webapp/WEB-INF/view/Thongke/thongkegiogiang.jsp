@@ -81,7 +81,8 @@
 										<label class="col-md-3">Giảng viên</label>
 										<div class="col-md-9">
 											<select class="form-control select2">
-												<option value="">Nguyễn Văn Anh Ngọc</option>
+												<option value="">--Tất cả--</option>
+												<option value="">Trần Văn Cường</option>
 												<option value="">Nguyễn Văn B</option>
 												<option value="">Nguyễn Văn C</option>
 											</select>
@@ -90,7 +91,7 @@
 								</div>
 								<div class="col-md-12 footform">
 									<button id="filter" class="btn btn-primary">Thống Kê</button>
-									<button id="reset" class="btn btn-primary">Làm Lại</button>
+									<button id="reset" onclick="resetInput();" class="btn btn-primary">Làm Lại</button>
 								</div>
 							</div>
 						</div>
@@ -112,21 +113,22 @@
 								<h5>CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</h5>
 								<h5 style="text-decoration: underline">Độc lập - Tự do -
 									Hạnh Phúc</h5>
-								<p>Bắc Ninh, ngày ….. tháng ….. năm ….</p>
+								<p>Bắc Ninh, ngày 20 tháng 4 năm 2018</p>
 							</div>
 							<div class="col-md-12">
 								<h5 style="text-align: center">BẢN KÊ KHAI GIỜ THỰC HIỆN
-									CỦA GIÁO VIÊN NĂM HỌC …..</h5>
-								<p>Họ và tên giáo viên: …............. Chức danh giảng dạy, HL: ….</p>
-								<p>Định mức giờ chuẩn: …..giờ; Miễn giảm: ….% = ……giờ; Số
-									giờ phải thực hiện: ….. giờ</p>		
+									CỦA GIÁO VIÊN NĂM HỌC 2016 - 2017</h5>
+								<p>Họ và tên giáo viên: Trần Văn Cường Chức danh giảng dạy, HL: Giáo Sư</p>
+								<p>Định mức giờ chuẩn: 360 giờ; Miễn giảm: 25% = 90 giờ; Số
+									giờ phải thực hiện: 270 giờ</p>		
 								<h5>I. Giờ chuẩn thự hiện</h5>			
 							</div>
 							<div class="col-md-12">
 								<table class="table table-bordered">
 							  <tr>
 							    <td>STT</td>
-							    <td>Lớp	Học phần</td>
+							    <td>Lớp</td>
+							    <td>Học phần</td>
 							    <td>Nội dung thực hiện 
 (ghi rõ tên bài, chương: giảng lý thuyết, TL, TH…; ra đề thi, loại đề; coi thi; chấm thi tự luận, vấn đáp…)</td>
 								<td>Số lượng/
@@ -136,28 +138,102 @@
 								<td>Ghi chú</td>
 							  </tr>
 							  <tr>
-							    <td>b</td>
+							    <td>1</td>
+							    <td>B1D6</td>
+							    <td>Cấu trúc dữ liệu và giải thuật</td>
+							    <td>Giảng lý thuyết</td>
+							    <td>45/45</td>
+							    <td>1:1</td>
+							    <td>45</td>
 							    <td></td>
+							  </tr>
+							   <tr>
+							    <td>2</td>
+							    <td>B2D6</td>
+							    <td>Mạng máy tính</td>
+							    <td>Giảng lý thuyết</td>
+							    <td>50/50</td>
+							    <td>1:1,2</td>
+							    <td>60</td>
 							    <td></td>
-							    <td></td>
-							    <td></td>
-							    <td></td>
+							  </tr>
+							   <tr>
+							    <td>3</td>
+							    <td>B3D6</td>
+							    <td>Tin học văn phòng</td>
+							    <td>Thực hành</td>
+							    <td>15/15</td>
+							    <td>1:1</td>
+							    <td>15</td>
 							    <td></td>
 							  </tr>
 							  <tr>
-							    <td>a</td>
-							    <td></td>
-							    <td></td>
-							    <td></td>
-							    <td></td>
-							    <td></td>
+							    <td>4</td>
+							    <td>B4D6</td>
+							    <td>Bảo trì hệ thống máy tính</td>
+							    <td>Thực hành</td>
+							    <td>30/30</td>
+							    <td>1:1</td>
+							    <td>30</td>
 							    <td></td>
 							  </tr>
 							  <tr>
-							  	<td colspan="6" style="text-align: center">TỔNG CỘNG: ……. giờ; 		Thừa:. …… giờ; 	Thiếu: …… giờ.</td>
+							   <tr>
+							    <td>5</td>
+							    <td>B5D6</td>
+							    <td>Truyền thông đa phương tiện</td>
+							    <td>Lý thuyết</td>
+							    <td>43 /45</td>
+							    <td>1:1</td>
+							    <td>43</td>
+							    <td></td>
+							  </tr>
+							  <tr>
+							   <tr>
+							    <td>6</td>
+							    <td>B6D6</td>
+							    <td>Kiến trúc máy tính</td>
+							    <td>Lý thuyết</td>
+							    <td>57/60</td>
+							    <td>1:1</td>
+							    <td>57</td>
+							    <td></td>
+							  </tr>
+							  <tr>
+							   <tr>
+							    <td>7</td>
+							    <td>B6D6</td>
+							    <td>Kiến trúc máy tính</td>
+							    <td>Ra đề tự luận</td>
+							    <td>2/3</td>
+							    <td>1:1</td>
+							    <td>2</td>
+							    <td></td>
+							  </tr>
+							  <tr>
+							    <td>8</td>
+							    <td>B6D6</td>
+							    <td>Kiến trúc máy tính</td>
+							    <td>Ra đề trắc nghiệm</td>
+							    <td>60/100</td>
+							    <td>20:1</td>
+							    <td>3</td>
+							    <td></td>
+							  </tr>
+							  <tr>
+							    <td>9</td>
+							    <td>B6D6</td>
+							    <td>Kiến trúc máy tính</td>
+							    <td>Chấm thi tự luận</td>
+							    <td>40/80</td>
+							    <td>8:1</td>
+							    <td>5</td>
+							    <td></td>
+							  </tr>
+							  <tr>
+							  	<td colspan="7" style="text-align: center">TỔNG CỘNG: 260 giờ; 		Thừa: 0 giờ; 	Thiếu: 10 giờ.</td>
 							  	<td></td>
 							  </tr>
-							  
 							</table>
 							</div>
 						</div>
@@ -202,8 +278,6 @@
 	<script type="text/javascript"
 		src="static/DataTables/js/dataTables.bootstrap.min.js"></script>
 	<script src="static/js/indexjs.js"></script>
-	<script src="static/jsTree/jstree.min.js"></script>
-	<script src="static/js/builtTree.js"></script>
 	<script src="static/js/select2.full.min.js"></script>
 	<script>
 		$('.select2').select2();

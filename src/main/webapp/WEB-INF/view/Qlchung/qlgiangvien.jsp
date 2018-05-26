@@ -113,11 +113,10 @@
 											data-target="#myModalXoa">Xóa</a></td>
 									</tr>
 									<tr>
-										<td>GV002</td>
-										<td><a data-toggle="modal" data-target="#myModalThem">Nguyễn
-												Thị Hồng</a></td>
+										<td>GV005</td>
+										<td><a data-toggle="modal" data-target="#myModalThem">Đào Đức Mạnh</a></td>
 										<td>Tiến sĩ</td>
-										<td>Giảng viên</td>
+										<td>Phó khoa</td>
 										<td>Công nghệ thông tin</td>
 										<td><a class="btn btn-success" data-toggle="modal"
 											data-target="#myModalThem">Sửa</a> &nbsp; <a
@@ -271,8 +270,6 @@
 	<script type="text/javascript"
 		src="static/DataTables/js/dataTables.bootstrap.min.js"></script>
 	<script src="static/js/indexjs.js"></script>
-	<script src="static/jsTree/jstree.min.js"></script>
-	<script src="static/js/builtTree.js"></script>
 	<script src="static/js/select2.full.min.js"></script>
 	<script>
 		$('.modal-title').html("Thêm môn học");
