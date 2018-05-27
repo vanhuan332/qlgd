@@ -37,89 +37,28 @@
 		<div class="content-wrapper">
 			<div class="row">
 				<div class="col-md-12">
-					<!--  bat dau form tìm kiem -->
-					<div class="box box-default">
-						<div class="box-header with-border">
-							<h3 class="box-title">Tiêu Chí Tìm Kiếm</h3>
-						</div>
-						<!-- /.box-header -->
-						<div class="box-body">
-							<div class="row">
-								<div class="col-md-4">
-									<div class="form-group col-md-12">
-										<label class="col-md-4">Mã môn học</label>
-										<div class="col-md-8">
-											<input id="manc" type="text" class="form-control"
-												placeholder="Mã môn học">
-										</div>
-									</div>
-									<!-- /.form-group -->
-
-									<!-- /.form-group -->
-								</div>
-								<!-- /.col -->
-								<div class="col-md-4">
-									<div class="form-group col-md-12">
-										<label class="col-md-4">Tên môn học</label>
-										<div class="col-md-8">
-											<input id="tennc" type="text" class="form-control"
-												placeholder="Tên môn học">
-										</div>
-									</div>
-									<!-- /.form-group -->
-
-								</div>
-								<div class="col-md-4">
-								<button id="filter" class="btn btn-primary">Tìm Kiếm</button>
-								<button id="reset" class="btn btn-primary">Làm Lại</button>
-							</div>
-								<!-- /.col -->
-
-								<!-- /.col -->
-							</div>
-							
-							<!-- /.row -->
-						</div>
-						<!-- /.box-body -->
-					</div>
 					<!-- bat dau table -->
 					<div class="col-md-12  box box-body">
 						<div class="box-header with-border">
 							<h3 class="box-title">Danh sách môn học</h3>
-							<a class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModalThem"
+							<a class="btn btn-primary pull-right" data-toggle="modal" onclick="themMonhoc();"
 								>Thêm</a>
 						</div>
 						<div class="col-md-12">
 							<table id="example2" class="table table-hover">
 								<thead>
-									<tr> 
+									<tr>
 										<td>Mã môn học</td>
 										<td>Tên môn học</td>
 										<td>Số tín chỉ</td>
 										<td>Số tiết</td>
-										<td>Hình thức thi</td>
+										<td>Sĩ số</td>
+										<td>Tên Lớp</td>
 										<td>Hành động</td>
 									</tr>
 								</thead>
 								<tbody>
-									<tr> 
-										<td>MH001</td>
-										<td><a data-toggle="modal" data-target="#myModalThem">Pháp luật đại cương</a></td>
-										<td>2</td>
-										<td>60</td>
-										<td>TL, TH, TN</td>
-										<td><a class="btn btn-success"  data-toggle="modal" data-target="#myModalThem">Sửa</a> &nbsp; 
-										<a class="btn btn-danger" data-toggle="modal" data-target="#myModalXoa">Xóa</a> </td>
-									</tr>
-									<tr> 
-										<td>MH002</td>
-										<td><a data-toggle="modal" data-target="#myModalThem">Tư tưởng Hồ Chí Minh</a></td>
-										<td>2</td>
-										<td>60</td>
-										<td>TL</td>
-										<td><a class="btn btn-success" data-toggle="modal" data-target="#myModalThem">Sửa</a> &nbsp; 
-										<a class="btn btn-danger" data-toggle="modal" data-target="#myModalXoa">Xóa</a> </td>
-									</tr>
+									
 								</tbody>
 							</table>
 						</div>
@@ -150,6 +89,7 @@
 		</div>
 		<!-- start modal -->
 		<div class="modal fade" id="myModalThem" role="dialog">
+			<form id ="themMonhocForm">
 			<div class="modal-dialog">
 				<!-- Modal content-->
 				<div class="modal-content">
@@ -159,49 +99,58 @@
 					</div>
 					<div class="modal-body">
 						<div class="col-md-12 form-group">
-								<label class="col-md-4 ">Mã môn học <span>*</span></label>
-								<div class="col-md-8">
-									<input id="mamonhoc" type="text" class="form-control">
-								</div>
-								<!-- 										<input type="text" id="level" hidden="hidden"> -->
-								
+						<label class="col-md-4 ">Mã môn học <span>*</span></label>
+							<div class="col-md-8">
+								<input id="mamonhoc" name="mamonhoc" type="text" class="form-control">
 							</div>
-							<div class="col-md-12 form-group">
-							<label class="col-md-4 ">Tên môn học </label>
-								<div class="col-md-8">
-									<input id="tenmonhoc" type="text" class="form-control">
-								</div>
+						</div>
+						<div class="col-md-12 form-group">
+						<label class="col-md-4 ">Tên môn học <span>*</span></label>
+							<div class="col-md-8">
+								<input id="tenmonhoc" name="tenmonhoc" type="text" class="form-control">
 							</div>
-							<div class="col-md-12 form-group">
-							<label class="col-md-4 ">Số tín chỉ </label>
-								<div class="col-md-8">
-									<input id="tenmonhoc" type="number" class="form-control">
-								</div>
+						</div>
+						<div class="col-md-12 form-group">
+						<label class="col-md-4 ">Số tín chỉ <span>*</span> </label>
+							<div class="col-md-8">
+								<input id="sotinchi" name="sotinchi" type="number" class="form-control">
 							</div>
-							<div class="col-md-12 form-group">
-							<label class="col-md-4 ">Số tiết </label>
-								<div class="col-md-8">
-									<input id="tenmonhoc" type="number" class="form-control">
-								</div>
+						</div>
+						<div class="col-md-12 form-group">
+						<label class="col-md-4 ">Số tiết <span>*</span></label>
+							<div class="col-md-8">
+								<input id="sotiet" name="sotiet" type="number" class="form-control">
 							</div>
-							<div class="col-md-12 form-group">
-								<label class="col-md-4 ">Hình thức thi</label>
-								<div class="col-md-8">
-									<select id="loaihinh" multiple="multiple" class="form-control select2" style="width: 100%;">
-										<option value="tuluan">Tự luận</option>
-										<option value="tracnghiem">Trắc nghiệm</option>
-										<option value="thuchanh">Thực hành</option>
-									</select>
-								</div>
+						</div>
+						<div class="col-md-12 form-group">
+						<label class="col-md-4 ">Sĩ số <span>*</span></label>
+							<div class="col-md-8">
+								<input id="siso" name="siso" type="number" class="form-control">
 							</div>
+						</div>
+						<div class="col-md-12 form-group">
+							<label class="col-md-4 ">Lớp <span>*</span></label>
+							<div class="col-md-8">
+								<select id="lop" name="lop" class="form-control select2"
+									style="width: 100%;">
+									<option value="">Chọn lớp</option>
+									<option value="59KT001">59KT001</option>
+									<option value="59LT001">59LT001</option>
+									<option value="59LT002">59LT002</option>
+									<option value="60KT001">60KT001</option>
+									<option value="60LT001">60LT001</option>
+									<option value="60LT002">60LT002</option>
+								</select>
+							</div>
+						</div>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-default " id="okModalT"
-							data-dismiss="modal">Đồng ý</button>
+						<input class="btn btn-primary" type="submit" value="Lưu" id="save" >
 						<button type="button" class="btn dongmodal" data-dismiss="modal">Đóng</button>
 					</div>
 				</div>
 			</div>
+			</form>
 		</div>
 		<!-- endmodal -->
 		<!-- start modal -->
@@ -238,43 +187,155 @@
 	<script src="static/js/datatable.js"></script>
 	<script type="text/javascript"
 		src="static/DataTables/js/dataTables.bootstrap.min.js"></script>
-	<script src="static/js/indexjs.js"></script>
+	<script type="text/javascript"
+		src="static/js/commonAjax.js"></script>
 	<script src="static/js/select2.full.min.js"></script>
+	<script src="static/js/jquery.validate.min.js"></script>
 	<script>
-	$('.modal-title').html("Thêm môn học");
+	$('.modal-title').html("Form môn học");
 	$('.select2').select2();
-	$("#example2").dataTable({"searching":false});
+	CommonAjax.get("/monhoc/list-monhoc",null,getMonSuccess,getError);
 	
-	$('#okModalXoa').on('click', function() {
-			CommonAjax.post({
-				"orgCode" : deleteOrgCode.trim()
-			}, "/orgChart/delete", deleteOrgChartSuccess, deleteOrgChartError);
-		});
-
-		//success delete
-		function deleteOrgChartSuccess(data) {
-			$("#notifiModal .modal-header").removeClass("btn-danger");
-			$("#notifiModal .modal-header").addClass("btn-success");
-			$('#massagemodal').html(data.message);
-			$('#notifiModal').modal('toggle');
-			$("#notifiModal").css({
-				"display" : "block"
-			});
-			$('#notifiModal').on('hidden.bs.modal', function(e) {
-				location.reload();
-			});
+	function renderButon(data) { 
+		return '<button class="btn btn-info btn-sm" onclick="update(' + data + ')">Sửa</button>&nbsp;'+
+	 '<button class="btnXoa btn btn-danger btn-sm" onclick="deleted('+ data +')">Xóa</button>';
+	 }
+	
+	var hearder=["idMonHoc","maMonHoc","tenMonHoc","soTinChi","soTiet","siSo","tenLop"];
+	function getMonSuccess(data){
+		CommonAjax.builtTable(data,hearder,renderButon);
+	}
+	function getError(data){
+		alert("Lỗi xảy ra")
+	}
+	
+	var formValidator = $("#themMonhocForm").validate({
+		rules : {
+			mamonhoc : {
+				required : true,
+				maxlength : 10
+			},
+			tenmonhoc : {
+				required : true,
+				maxlength : 100
+			},
+			sotinchi : {
+				required:true,
+				max:5,
+			},
+			sotiet: {
+				required:true,
+				max:100,
+			},
+			siso: {
+				required:true,
+				max:100,
+			},
+			lop: {
+				required:true,
+			}
+		},
+		messages : {
+			mamonhoc:{
+				required: "Vui lòng nhập mã monhoc",
+				maxlength: "Độ dài không vượt quá 10 kí tự"
+			},
+			tenmonhoc: {
+				required: "Vui lòng nhập tên môn học",
+				maxlength: "Độ dài không vượt quá 100 kí tự"
+			},
+			sotinchi : {
+				required: "Vui lòng nhập số tín chỉ",
+				max: "Số tín chỉ không được vượt quá 5"
+			},
+			sotiet: {
+				required: "Vui lòng nhập vào số tiết",
+				maxlength: "Số tiết không được vượt quá 100"
+			},
+			siso: {
+				required: "Vui lòng nhập vào sĩ số",
+				max: "Sĩ số không được vượt quá 100"
+			},
+			lop: {
+				required: "Vui lòng chọn lớp"
+			}
+		}		
+	});	
+	
+	//add Mon hoc
+	function themMonhoc(){
+		$("#myModalThem .modal-title").html("Thêm Môn Học");
+		$("#myModalThem").modal("toggle");
+		$("#mamonhoc").val("");
+		$("#tenmonhoc").val("");
+		$("#siso").val("");
+		$("#sotiet").val("");
+		$("#sotinchi").val("");
+		formValidator.settings.submitHandler = addHandler;
+	}
+	
+	function addHandler(){
+		var dataa = {
+			"maMonHoc": ($("#mamonhoc").val().trim() != "" ) ? $("#mamonhoc").val().trim() : null,
+			"siSo": ($("#siso").val().trim() != "" ) ? $("#siso").val().trim() : null,
+			"soTiet": ($("#sotiet").val().trim() != "" ) ? $("#sotiet").val().trim() : null,
+			"soTinChi":($("#sotinchi").val().trim() != "" ) ? $("#sotinchi").val().trim() : null,
+			"tenMonHoc": ($("#tenmonhoc").val().trim() != "" ) ? $("#tenmonhoc").val().trim() : null,
+			"tenLop":  ($("#lop").val().trim() != "" ) ? $("#lop").val().trim() : null
 		}
-		//error delete
-		function deleteOrgChartError(data) {
-			$("#notifiModal .modal-header").removeClass("btn-success");
-			$("#notifiModal .modal-header").addClass("btn-danger");
-			$('#massagemodal').html(data.responseJSON.message);
-			$('#notifiModal').modal('show');
-			$("#notifiModal").css({
-				"display" : "block"
-			});
-		}
-		// endXoa
+		CommonAjax.post("/monhoc/add",dataa,addSuccess,addError);
+	}
+	function addSuccess(data){
+		$("#myModalThem").modal("toggle");
+		alert("Succes: "+data.message)
+		location.reload();
+	}
+	function addError(data){
+		alert("Error: "+data.message)
+	}
+	
+	//update
+	function update(id){
+		var idMon = id;
+		CommonAjax.get("/monhoc/monhoc-info/"+idMon,null,succesDetail,null)
+		$("#myModalThem .modal-title").html("Update Môn Học");
+		$("#myModalThem").modal("toggle");
+		formValidator.settings.submitHandler = function updateHandler(idMon){
+			var dataa = {
+				"idMonHoc": id,
+				"maMonHoc": ($("#mamonhoc").val().trim() != "" ) ? $("#mamonhoc").val().trim() : null,
+				"siSo": ($("#siso").val().trim() != "" ) ? $("#siso").val().trim() : null,
+				"soTiet": ($("#sotiet").val().trim() != "" ) ? $("#sotiet").val().trim() : null,
+				"soTinChi":($("#sotinchi").val().trim() != "" ) ? $("#sotinchi").val().trim() : null,
+				"tenMonHoc": ($("#tenmonhoc").val().trim() != "" ) ? $("#tenmonhoc").val().trim() : null
+			}
+			CommonAjax.post("/monhoc/update",dataa,addSuccess,addError);
+		};	
+	}
+	
+	function succesDetail(data) {
+		$("#mamonhoc").val(data.maMonHoc);
+		$("#tenmonhoc").val(data.tenMonHoc);
+		$("#siso").val(data.siSo);
+		$("#sotiet").val(data.soTiet);
+		$("#sotinchi").val(data.soTinChi);
+	}
+	//xoa 
+	var idxoa=null;
+	function deleted(id){
+		$('#myModalXoa').modal('toggle');
+		idxoa = id; 
+	}
+	$('#okModalXoa').on('click',function(){
+		CommonAjax.post("/monhoc/delete",{"idMonHoc":idxoa},deleteSuccess,deleteError);
+	});
+	function deleteSuccess(data){
+		alert("Succes: "+data.message);
+		location.reload();
+	}
+	function deleteError(data){
+		alert("Error: "+data.message)
+	}
 	</script>
 </body>
 </html>

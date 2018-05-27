@@ -37,55 +37,11 @@
 		<div class="content-wrapper">
 			<div class="row">
 				<div class="col-md-12">
-					<!--  bat dau form tìm kiem -->
-					<div class="box box-default">
-						<div class="box-header with-border">
-							<h3 class="box-title">Tiêu Chí Tìm Kiếm</h3>
-						</div>
-						<!-- /.box-header -->
-						<div class="box-body">
-							<div class="row">
-								<div class="col-md-4">
-									<div class="form-group col-md-12">
-										<label class="col-md-4">Mã giảng viên</label>
-										<div class="col-md-8">
-											<input id="manc" type="text" class="form-control"
-												placeholder="Mã giảng viên">
-										</div>
-									</div>
-									<!-- /.form-group -->
-								</div>
-								<!-- /.col -->
-								<div class="col-md-4">
-									<div class="form-group col-md-12">
-										<label class="col-md-4">Tên giảng viên</label>
-										<div class="col-md-8">
-											<input id="tennc" type="text" class="form-control"
-												placeholder="Tên giảng viên">
-										</div>
-									</div>
-									<!-- /.form-group -->
-
-								</div>
-								<div class="col-md-4">
-									<button id="filter" class="btn btn-primary">Tìm Kiếm</button>
-									<button id="reset" class="btn btn-primary">Làm Lại</button>
-								</div>
-								<!-- /.col -->
-
-								<!-- /.col -->
-							</div>
-
-							<!-- /.row -->
-						</div>
-						<!-- /.box-body -->
-					</div>
 					<!-- bat dau table -->
 					<div class="col-md-12  box box-body">
 						<div class="box-header with-border">
 							<h3 class="box-title">Danh sách giảng viên</h3>
-							<a class="btn btn-primary pull-right" data-toggle="modal"
-								data-target="#myModalThem">Thêm</a>
+							<a class="btn btn-primary pull-right" data-toggle="modal">Thêm</a>
 						</div>
 						<div class="col-md-12">
 							<table id="example2" class="table table-hover">

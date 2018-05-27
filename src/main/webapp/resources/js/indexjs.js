@@ -24,10 +24,11 @@ function enterForm(inputsWrapperSelector,buttonSelector)
 	        $(buttonSelector).click();
 	    }
 	});
-	
 }
 
 function resetInput(){
 	$("input, select").val("");
 	$("select").val("").trigger('change');
 }
+
+

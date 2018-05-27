@@ -83,7 +83,7 @@
 											<td>Tên môn học</td>
 											<td>Số tín chỉ</td>
 											<td>Số tiết</td>
-											<td>Hình thức thi</td>
+											<td>Nội dung thực hiện</td>
 											<td>Hành động</td>
 										</tr>
 									</thead>
