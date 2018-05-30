@@ -49,21 +49,14 @@
 									<div class="form-group col-md-12">
 										<label class="col-md-4">Giảng viên</label>
 										<div class="col-md-8">
-											<select class="form-control select2">
-												<option value="">--Tất cả--</option>
-												<option value="">Trần Văn Cường</option>
-												<option value="">Nguyễn Văn B</option>
-												<option value="">Nguyễn Văn C</option>
+											<select id="giangvien" class="form-control select2">
+												<option value="">Chọn Giảng viên</option>
 											</select>
 										</div>
 									</div>
 								</div>
-								<div class="col-md-4">
-									<button id="filter" class="btn btn-primary">Lọc</button>
-									<button id="reset" class="btn btn-primary">Làm Lại</button>
-								</div>
 							</div>
-							
+
 
 
 							<!-- /.box-body -->
@@ -72,46 +65,19 @@
 						<div class="col-md-12  box box-body">
 							<div class="box-header with-border">
 								<h3 class="box-title">Danh sách giảng dạy</h3>
-								<a class="btn btn-primary pull-right" data-toggle="modal"
-									data-target="#myModalThem">Thêm</a>
+								<a class="btn btn-primary pull-right" data-toggle="modal" id="themBtn" onclick="them();">Thêm</a>
 							</div>
 							<div class="col-md-12">
 								<table id="example2" class="table table-hover">
 									<thead>
 										<tr>
-											<td>Mã môn học</td>
 											<td>Tên môn học</td>
-											<td>Số tín chỉ</td>
-											<td>Số tiết</td>
+											<td>Số lượng</td>
 											<td>Nội dung thực hiện</td>
-											<td>Hành động</td>
 										</tr>
 									</thead>
 									<tbody>
-										<tr>
-											<td>MH001</td>
-											<td><a data-toggle="modal" data-target="#myModalThem">Pháp
-													luật đại cương</a></td>
-											<td>2</td>
-											<td>60</td>
-											<td>TL, TH, TN</td>
-											<td><a class="btn btn-success" data-toggle="modal"
-												data-target="#myModalThem">Sửa</a> &nbsp; <a
-												class="btn btn-danger" data-toggle="modal"
-												data-target="#myModalXoa">Xóa</a></td>
-										</tr>
-										<tr>
-											<td>MH002</td>
-											<td><a data-toggle="modal" data-target="#myModalThem">Tư
-													tưởng Hồ Chí Minh</a></td>
-											<td>2</td>
-											<td>60</td>
-											<td>TL</td>
-											<td><a class="btn btn-success" data-toggle="modal"
-												data-target="#myModalThem">Sửa</a> &nbsp; <a
-												class="btn btn-danger" data-toggle="modal"
-												data-target="#myModalXoa">Xóa</a></td>
-										</tr>
+
 									</tbody>
 								</table>
 							</div>
@@ -145,61 +111,38 @@
 			<div class="modal fade" id="myModalThem" role="dialog">
 				<div class="modal-dialog">
 					<!-- Modal content-->
-					<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close dongmodal"
-								data-dismiss="modal">&times;</button>
-							<h4 class="modal-title">Thêm Giảng Dạy</h4>
-						</div>
-						<div class="modal-body">
-							<div class="col-md-12 form-group">
-								<label class="col-md-4 ">Giảng viên</label>
-								<div class="col-md-8">
-									<select id="loaihinh"
-										class="form-control select2" style="width: 100%;">
-										<option value="">--Chọn giảng viên--</option>
-										<option value="">Trần Văn Cường</option>
-										<option value="">Trần Văn A</option>
-									</select>
+					<form id="themForm">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close dongmodal"
+									data-dismiss="modal">&times;</button>
+								<h4 class="modal-title">Thêm Giảng Dạy</h4>
+							</div>
+							<div class="modal-body">
+
+								<div class="col-md-12 form-group">
+									<label class="col-md-4 ">Môn học</label>
+									<div class="col-md-8">
+										<select id="monhoc" name="monhoc" class="form-control select2"
+											style="width: 100%;">
+										</select>
+									</div>
+								</div>
+								<div class="col-md-12 form-group">
+									<label class="col-md-4 ">Hành động</label>
+									<div class="col-md-8">
+										<select id="hanhdong" name="hanhdong"
+											class="form-control select2" style="width: 100%;">
+										</select>
+									</div>
 								</div>
 							</div>
-							
-							<div class="col-md-12 form-group">
-								<label class="col-md-4 ">Môn học</label>
-								<div class="col-md-8">
-									<select id="loaihinh" multiple="multiple"
-										class="form-control select2" style="width: 100%;">
-										<option value="tracnghiem">Toán cao cấp</option>
-										<option value="thuchanh">Lập trình nâng cao</option>
-									</select>
-								</div>
-							</div>
-							<div class="col-md-12 form-group">
-								<label class="col-md-4 ">Hành động</label>
-								<div class="col-md-8">
-									<select id="loaihinh" multiple="multiple"
-										class="form-control select2" style="width: 100%;">
-										<option value="">Giảng dạy</option>
-										<option value="">Ra đề tự luận</option>
-										<option value="">Ra đề trắc nghiệm</option>
-										<option value="">Chấm thi tự luận</option>
-										<option value="">Chấm thi trắc nghiệm</option>
-									</select>
-								</div>
-							</div>
-							<div class="col-md-12 form-group">
-								<label class="col-md-4 ">Số lượng</label>
-								<div class="col-md-8">
-									<input type="number" class="form-control" />
-								</div>
+							<div class="modal-footer">
+								<input class="btn btn-primary" type="submit" value="Lưu" id="save" >
+								<button type="button" class="btn dongmodal" data-dismiss="modal">Đóng</button>
 							</div>
 						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-default " id="okModalXoa"
-								data-dismiss="modal">Đồng ý</button>
-							<button type="button" class="btn dongmodal" data-dismiss="modal">Đóng</button>
-						</div>
-					</div>
+					</form>
 				</div>
 			</div>
 			<!-- endmodal -->
@@ -240,46 +183,96 @@
 			src="static/DataTables/js/dataTables.bootstrap.min.js"></script>
 		<script src="static/js/indexjs.js"></script>
 		<script src="static/js/select2.full.min.js"></script>
+		<script src="static/js/jquery.validate.min.js"></script>
 		<script>
-			$('.modal-title').html("Thêm môn học");
 			$('.select2').select2();
-			$("#example2").dataTable({
-				"searching" : false
+			
+			CommonAjax.get("/giangvien/list-giangvien",null,getCDSuccess,null);
+			function getCDSuccess(data){
+				data.forEach(ele => {
+					$("#giangvien").append('<option value='+ele.idGiangVien+'>'+ele.fullName+'</option>')
+				})
+			}
+			
+			$('#giangvien').on('select2:select', function (e) {
+				var idGv = $('#giangvien').val();
+				CommonAjax.get("/giangvien/thongke/"+idGv,null,getTkSuccess,null);
 			});
-
-			$('#okModalXoa').on(
-					'click',
-					function() {
-						CommonAjax.post({
-							"orgCode" : deleteOrgCode.trim()
-						}, "/orgChart/delete", deleteOrgChartSuccess,
-								deleteOrgChartError);
-					});
-
-			//success delete
-			function deleteOrgChartSuccess(data) {
-				$("#notifiModal .modal-header").removeClass("btn-danger");
-				$("#notifiModal .modal-header").addClass("btn-success");
-				$('#massagemodal').html(data.message);
-				$('#notifiModal').modal('toggle');
-				$("#notifiModal").css({
-					"display" : "block"
-				});
-				$('#notifiModal').on('hidden.bs.modal', function(e) {
-					location.reload();
-				});
+			function getTkSuccess(data){
+				$('#example2').dataTable().fnDestroy();
+				$("#example2 tbody").html("");
+				var idgv = $('#giangvien').val();
+				data.forEach(e => {
+					var tr = $('<tr/>');
+						var td =$('<td/>');
+						tr.append($('<td/>').html(e.tenHocPhan));
+						tr.append($('<td/>').html(e.soLuong));
+						tr.append($('<td/>').html(e.noiDungThucHien));
+					$("#example2 tbody").append(tr);
+				})
+				$("#example2").dataTable({"searching":false});
 			}
-			//error delete
-			function deleteOrgChartError(data) {
-				$("#notifiModal .modal-header").removeClass("btn-success");
-				$("#notifiModal .modal-header").addClass("btn-danger");
-				$('#massagemodal').html(data.responseJSON.message);
-				$('#notifiModal').modal('show');
-				$("#notifiModal").css({
-					"display" : "block"
-				});
+			
+			CommonAjax.get("/monhoc/list-monhoc",null,getMHSuccess,null);
+			function getMHSuccess(dataad){
+				dataad.forEach(el => {
+					$("#monhoc").append('<option value='+el.idMonHoc+'>'+el.tenMonHoc+'</option>')
+				})
 			}
-			// endXoa
+			CommonAjax.get("/hanhdong/list-hanhdong",null,getHDSuccess,null);
+			function getHDSuccess(data){
+				data.forEach(ele => {
+					$("#hanhdong").append('<option value='+ele.idHanhDong+'>'+ele.tenHanhDong+'</option>')
+				})
+			}
+			
+			var formValidator = $("#themForm").validate({
+				rules : {
+					monhoc: {
+						required:true,
+						max:100,
+					},
+					hanhdong: {
+						required:true,
+					}
+				},
+				messages : {
+					monhoc: {
+						required: "Vui lòng chọn môn học"
+					},
+					hanhdong: {
+						required: "Vui lòng chọn hành động"
+					}
+				}		
+			});	
+			
+			function them(){
+				var idGv = $('#giangvien').val();
+				if (idGv != "" || idGv != null){
+					$("#myModalThem .modal-title").html("Thêm Giảng Dạy");
+					$("#myModalThem").modal("toggle");
+				}
+				$("#monhoc").val("").trigger("change");
+				$("#hanhdong").val("").trigger("change");
+				formValidator.settings.submitHandler = addHandler;
+			}
+			
+			function addHandler(){
+				var dataa = {
+						"idGiangVien": ($("#giangvien").val().trim() != "" ) ? parseFloat($("#giangvien").val().trim()) : null,
+						"idHanhDong":($("#hanhdong").val().trim() != "" ) ? parseFloat($("#hanhdong").val().trim()) : null,
+						"idMonHoc": ($("#monhoc").val().trim() != "" ) ? parseFloat($("#monhoc").val().trim()) : null,
+					}
+				CommonAjax.post("/giangvien/updateHDMH",dataa,addSuccess,addError);
+			}
+			function addSuccess(data){
+				$("#myModalThem").modal("toggle");
+				alert("Succes: "+data.message)
+				location.reload();
+			}
+			function addError(data){
+				alert("Error: "+data.message)
+			}
 		</script>
 </body>
 </html>

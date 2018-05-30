@@ -298,7 +298,7 @@
 	function update(id){
 		var idMon = id;
 		CommonAjax.get("/monhoc/monhoc-info/"+idMon,null,succesDetail,null)
-		$("#myModalThem .modal-title").html("Update Môn Học");
+		$("#myModalThem .modal-title").html("Sửa Môn Học");
 		$("#myModalThem").modal("toggle");
 		formValidator.settings.submitHandler = function updateHandler(idMon){
 			var dataa = {
@@ -307,7 +307,8 @@
 				"siSo": ($("#siso").val().trim() != "" ) ? $("#siso").val().trim() : null,
 				"soTiet": ($("#sotiet").val().trim() != "" ) ? $("#sotiet").val().trim() : null,
 				"soTinChi":($("#sotinchi").val().trim() != "" ) ? $("#sotinchi").val().trim() : null,
-				"tenMonHoc": ($("#tenmonhoc").val().trim() != "" ) ? $("#tenmonhoc").val().trim() : null
+				"tenMonHoc": ($("#tenmonhoc").val().trim() != "" ) ? $("#tenmonhoc").val().trim() : null,
+				"tenLop":  ($("#lop").val().trim() != "" ) ? $("#lop").val().trim() : null
 			}
 			CommonAjax.post("/monhoc/update",dataa,addSuccess,addError);
 		};	
@@ -319,6 +320,7 @@
 		$("#siso").val(data.siSo);
 		$("#sotiet").val(data.soTiet);
 		$("#sotinchi").val(data.soTinChi);
+		$("#lop").val(data.tenLop).trigger("change");
 	}
 	//xoa 
 	var idxoa=null;

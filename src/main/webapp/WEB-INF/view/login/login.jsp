@@ -74,22 +74,26 @@ body {
 	<script src="static/js/indexjs.js"></script>
 	
 	<script type="text/javascript">
-		function doLogin(){
-			$.ajax({
-				 type: 'post',
-				 method: 'post',
-				 url: 'authenticate',
-			     data: $("#login-form").serialize(),
-		         success : function(data){
-		        	 location.href='home';
-		         },
-		         error : function(data){
-		        	 $("#err-ms").html(data.responseText)
-		         }
-		     });
-		}
-		
-		enterForm("#login-form","#btn-login")
+	function doLogin(){
+		$.ajax({
+			 type: 'post',
+			 method: 'post',
+			 headers: {
+			        "WWW-Authenticate", "Basic realm=" +getRealmName()",
+			        "My-Second-Header":"second value"
+			    },
+			 url: 'authenticate',
+		     data: $("#login-form").serialize(),
+	         success : function(data){
+	        	 location.href='/';
+	         },
+	         error : function(data){
+	        	 $("#err-ms").html(data.responseText)
+	         }
+	     });
+	}
+	
+	enterForm("#login-form","#btn-login")
 		
 		
 	</script>
