@@ -27,10 +27,9 @@
 			<!-- <div class="pull-left image" style="height: 30px;">
 			</div> -->
 			<div class="info">
-				<p>Nguyễn Văn An</p>
+				<p id="username"></p>
 				<p>
-					<a onclick="logout()" href="<%=localUrl%>/login"><i
-						class="fa fa-sign-out"></i> Logout</a> &nbsp;
+					<a href="<%=localUrl %>/login" onclick="logout()"><i class="fa fa-sign-out"></i> Logout</a> &nbsp;
 				</p>
 			</div>
 		</div>
@@ -80,3 +79,6 @@
 <script src="static/js/indexjs.js"></script>
 <script src="static/js/commonAjax.js"></script>
 <script type="text/javascript" src="static/js/activemenu.js"></script>
+<script>
+	$("#username").html(localStorage.getItem("username"))
+</script>

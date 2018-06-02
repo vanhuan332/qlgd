@@ -46,8 +46,10 @@
 	<!-- responsive menu doc slide hide and show -->
 	<script src="static/js/adminlte.min.js"></script>
 	<script src="static/js/indexjs.js"></script>
-	<script type="text/javascript">
-	
+	<script>
+		if(localStorage.getItem("username") == "null"){
+			location.href = '/login';
+		}
 	</script>
 </body>
 </html>

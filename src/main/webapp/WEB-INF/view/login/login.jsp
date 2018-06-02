@@ -34,7 +34,7 @@ body {
 				</div>
 				<!-- /.box-header -->
 				<!-- form start -->
-				<form class="form-horizontal" id="login-form" action="authenticate" method="post">
+				<form class="form-horizontal" id="login-form" method="post">
 					<div class="box-body">
 						<div class="form-group">
 							<label for="username" class="col-sm-3 control-label">Tên
@@ -57,10 +57,9 @@ body {
 						<label class="col-sm-3"></label><label class="col-sm-9" id="err-ms" style="color: red"></label>
 					</div>
 					<div class="box-footer">
-					<!-- <button type="submit" class="btn btn-default">Quay lại</button> -->
-					<button type="button" onclick="doLogin()" id="btn-login" class="btn btn-info pull-right">Đăng
-						nhập</button>
+					<button type="button" onclick="doLogin()" id="btn-login" class="btn btn-info pull-right">Đăng nhập</button>
 				</div>
+					<div id = "err"></div>
 				</form>
 				<!-- /.box-body -->
 			</div>
@@ -74,28 +73,37 @@ body {
 	<script src="static/js/indexjs.js"></script>
 	
 	<script type="text/javascript">
+	var urlApi= "http://localhost:8082/api";
 	function doLogin(){
-		$.ajax({
-			 type: 'post',
-			 method: 'post',
-			 headers: {
-			        "WWW-Authenticate", "Basic realm=" +getRealmName()",
-			        "My-Second-Header":"second value"
-			    },
-			 url: 'authenticate',
-		     data: $("#login-form").serialize(),
-	         success : function(data){
-	        	 location.href='/';
-	         },
-	         error : function(data){
-	        	 $("#err-ms").html(data.responseText)
-	         }
-	     });
+		var dataa = {
+				"username": ($("#username").val().trim() != "" ) ? $("#username").val().trim() : "",
+				"password":($("#password").val().trim() != "" ) ? $("#password").val().trim() : ""
+			};
+		ajaxGet("/rest/login",JSON.stringify(dataa),successHandler,errorHandler);
 	}
-	
+	function ajaxGet(url,data,successHandler,errorHandler) {
+		$.ajax({
+			headers:{
+				'Content-Type':'application/json'
+			},
+			type : 'post',
+			//dataType : 'json',
+			url : urlApi+url,
+			data : data,
+			success : successHandler,
+			error : errorHandler,
+		});
+	}
+	function successHandler(data,xhr){
+		localStorage.setItem("access-token", data);
+		localStorage.setItem("username", $("#username").val().trim() );
+		location.href="/home";
+	}
+	function errorHandler(data){
+		$("#err").html("<span style='color:red'>"+data.responseText+"<span>");
+	}
 	enterForm("#login-form","#btn-login")
-		
-		
+	
 	</script>
 	
 </body>

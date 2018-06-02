@@ -210,6 +210,7 @@
 			$("#thieu").html(data.thieu);
 		}
 		function getTkSuccess(data){
+			$("#example2 tbody").html("");
 			var stt = 1;
 			data.forEach(e => {
 				var tr =$("<tr/>")

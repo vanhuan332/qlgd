@@ -1,7 +1,7 @@
 
 function logout(){
-	CommonAjax.post(null,"/oauth/logout",function(data){console.log(data);
-	},null)
+	localStorage.setItem("access-token", null);	
+	localStorage.setItem("username", null);
 }
 
 function toStringDDMMYYYY(data, type, row) {

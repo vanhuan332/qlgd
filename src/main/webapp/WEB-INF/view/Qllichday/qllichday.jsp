@@ -248,7 +248,7 @@
 			
 			function them(){
 				var idGv = $('#giangvien').val();
-				if (idGv != "" || idGv != null){
+				if (idGv != "" && idGv != null){
 					$("#myModalThem .modal-title").html("Thêm Giảng Dạy");
 					$("#myModalThem").modal("toggle");
 				}

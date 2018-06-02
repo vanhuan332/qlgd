@@ -6,15 +6,23 @@ var CommonAjax = {
 	get :function ajaxGet(url,data,successHandler,errorHandler) {
 		$.ajax({
 			type : "GET",
+			headers:{
+				"Authorization":localStorage.getItem("access-token")
+			},
 			dataType : "json",
 			url : urlApi+url,
 			data : data,
 			success : successHandler,
-			error : successHandler,
+			error : function(){
+				location.href='/login'
+			},
 		});
 	},
 	post : function ajaxGet(url,data,successHandler,errorHandler) {
 		$.ajax({
+			headers:{
+				"Authorization":localStorage.getItem("access-token")
+			},
 			type : "POST",
 			dataType : "json",
 			url : urlApi+url,
